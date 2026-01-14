@@ -355,6 +355,7 @@ get_outcome_weights.dml_with_smoother = function(object,...,
   ### AIPW_LATT ###
   if (!is.character(object$results$AIPW_LATT)) {
     Z = object$data$Z
+    D = object$data$D
     h.hat = mean(Z)
     Z.hat = object$NuPa.hat$predictions$Z.hat
     Y.hat.z0 = object$NuPa.hat$predictions$Y.hat.z0
@@ -379,6 +380,7 @@ get_outcome_weights.dml_with_smoother = function(object,...,
   ### AIPW_LATU ###
   if (!is.character(object$results$AIPW_LATU)) {
     Z = object$data$Z
+    D = object$data$D
     h.hat = mean(Z)
     Z.hat = object$NuPa.hat$predictions$Z.hat
     Y.hat.z1 = object$NuPa.hat$predictions$Y.hat.z1

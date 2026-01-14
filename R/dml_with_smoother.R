@@ -167,8 +167,8 @@ dml_with_smoother = function(Y,D,X,Z=NULL,
     lambda1 = Z / Z.hat
     lambda0 = (1 - Z) / (1 - Z.hat)
     weights = Z.hat / h.hat * (lambda1 - lambda0)
-    psi.a = weights * (Y - Y.hat.z0)
-    psi.b = -weights * (D - D.hat.z0)
+    psi.a = -weights * (D - D.hat.z0)
+    psi.b = weights * (Y - Y.hat.z0)
     dml_AIPW_LATT = dml_inference(psi.a,psi.b)
   }
   if ("AIPW_LATU" %in% estimators) {
@@ -179,8 +179,8 @@ dml_with_smoother = function(Y,D,X,Z=NULL,
     lambda1 = Z / Z.hat
     lambda0 = (1 - Z) / (1 - Z.hat)
     weights = (1 - Z.hat) / (1 - h.hat) * (lambda1 - lambda0)
-    psi.a = weights * (Y - Y.hat.z1)
-    psi.b = -weights * (D - D.hat.z1)
+    psi.a = -weights * (D - D.hat.z1)
+    psi.b = weights * (Y - Y.hat.z1)
     dml_AIPW_LATU = dml_inference(psi.a,psi.b)
   }
   

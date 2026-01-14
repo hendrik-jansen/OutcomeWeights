@@ -171,7 +171,7 @@ dml_with_smoother = function(Y,D,X,Z=NULL,
     psi.b = -weights * (D - D.hat.z0)
     dml_AIPW_LATT = dml_inference(psi.a,psi.b)
   }
-  if ("AIPW_LATU" in %in% estimators) {
+  if ("AIPW_LATU" %in% estimators) {
     h.hat = mean(Z)
     Z.hat = NuPa.hat$predictions$Z.hat
     Y.hat.z1 = NuPa.hat$predictions$Y.hat.z1

@@ -76,8 +76,8 @@ dml_with_smoother = function(Y,D,X,Z=NULL,
   if (length(not_supported) > 0) {
     stop(paste("Error: The following specified smoothers are not supported:", 
                paste(not_supported, collapse = ", ")))}
-  if (any(c("PLR_IV", "Wald_AIPW") %in% estimators) && is.null(Z)) {
-    stop("Error: Z cannot be NULL when using either 'PLR_IV' or 'Wald_AIPW' as an estimator.")
+  if (any(c("PLR_IV", "Wald_AIPW", "AIPW_LATT", "AIPW_LATU") %in% estimators) && is.null(Z)) {
+    stop("Error: Z cannot be NULL when using 'PLR_IV', 'Wald_AIPW', 'AIPW_LATT' or 'AIPW_LATU' as an estimator.")
   }
   
   # Extract useful information
